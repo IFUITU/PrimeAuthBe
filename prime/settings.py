@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import environ
 import datetime
+import os
+import django_heroku
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -158,3 +161,8 @@ JWT_AUTH = {
     'JWT_EXPIRATION_DELTA':datetime.timedelta(seconds=7200),
     'JWT_REFRESH_EXPIRATION_DELTA':datetime.timedelta(days=5)
 }
+
+
+
+#Activate Django_Heroku
+django_heroku.settings(locals())
